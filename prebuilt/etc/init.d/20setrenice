@@ -1,5 +1,10 @@
 #!/system/bin/sh
+
+. /system/etc/init.d.cfg
+. $script_helpers
+
 if $setrenice
+then
 renice -20 `pidof com.android.phone`
 renice -19 `pidof com.android.inputmethod.latin`
 renice -19 `pidof com.swype.android.inputmethod`
